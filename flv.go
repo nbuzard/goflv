@@ -36,12 +36,14 @@ func CreateFile(name string) (flvFile *File, err error) {
 		file.Close()
 		return
 	}
-
+/*
 	// Sync to disk
 	if err = file.Sync(); err != nil {
 		file.Close()
 		return
 	}
+	*/
+	
 
 	flvFile = &File{
 		file:      file,
@@ -196,7 +198,7 @@ func (flvFile *File) Sync() (err error) {
 		return
 	}
 
-	err = flvFile.file.Sync()
+//	err = flvFile.file.Sync()
 	return
 }
 func (flvFile *File) Size() (size int64) {
